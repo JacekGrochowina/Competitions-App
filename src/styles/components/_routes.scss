@@ -1,0 +1,34 @@
+.routes {
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item {
+        position: relative;
+        margin-right: 20px;
+        font-size: 0.82rem;
+        color: map-get($colors, gray-brighter-1);
+        &:nth-last-of-type(1) {
+            &::before {
+                content: none;
+            }
+        }
+        &::before {
+            content: "/";
+            line-height: 0.82rem;
+            position: absolute;
+            top: 50%;
+            right: -13px;
+            transform: translateY(-60%);
+        }
+    }
+    &__link {
+        color: map-get($colors, gray-brighter-1);
+        cursor: pointer;
+        transition-duration: 0.25s;
+        transition-property: color;
+        &:hover {
+            color: map-get($colors, leading);
+        }
+    }
+}

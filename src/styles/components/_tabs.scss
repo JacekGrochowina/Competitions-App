@@ -1,0 +1,50 @@
+.tabs {
+    &-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.1rem;
+        @include media-breakpoint-down(xs) {
+            flex-direction: column;
+        }
+        &__item {
+            padding: 5px 25px;
+            border-radius: 23px;
+            background-color: map-get($colors, light);
+            color: map-get($colors, gray-brighter-1);
+            cursor: pointer;
+            user-select: none;
+            transition-property: background-color, color;
+            transition-duration: 0.25s;
+            &:nth-of-type(2) {
+                @include media-breakpoint-down(xs) {
+                    margin-top: 15px;
+                }
+            }
+            &.active {
+                background-color: map-get($colors, leading);
+                color: map-get($colors, light);
+            }
+        }
+    }
+    &-content {
+        display: none;
+        &.active {
+            display: block;
+            animation: tabsContentFadeIn 0.45s both;
+            @keyframes tabsContentFadeIn {
+                0% {
+                    display: none;
+                    opacity: 0;
+                }
+                0.0001% {
+                    display: block;
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

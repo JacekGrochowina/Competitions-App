@@ -1,0 +1,61 @@
+.table-container {
+    @include media-breakpoint-down(md) {
+        padding: 0 !important;
+    }
+}
+
+.table-wrapper {
+    @include media-breakpoint-down(md) {
+        overflow-x: scroll;
+    }
+}
+
+.table {
+    width: 100%;
+    min-width: 945px;
+    &__row {
+        &:nth-child(odd) {
+            background-color: map-get($colors, leading-brighter-2);
+        }
+        &:nth-child(even) {
+            background-color: map-get($colors, leading-brighter-3);
+        }
+        &--heading {
+            height: 50px;
+            background-color: map-get($colors, leading) !important;
+        }
+    }
+    &__cell {
+        padding: 7px 30px;
+        color: map-get($colors, leading);
+        font-size: 0.9rem;
+        &--remove {
+            width: 73px;
+            cursor: pointer;
+            &:hover {
+                color: map-get($colors, light);
+                background-color: map-get($colors, leading) !important;
+            }
+        }
+        &--phone {
+            width: 180px;
+        }
+        &--heading {
+            padding: 0 30px;
+            color: map-get($colors, light);
+            font-size: 1rem;
+            &:nth-of-type(1) {
+                border-top-left-radius: 30px;
+                @include media-breakpoint-down(md) {
+                    border-top-left-radius: 0;
+                }
+            }
+            &:nth-last-of-type(1) {
+                border-top-right-radius: 30px;
+                @include media-breakpoint-down(md) {
+                    border-top-right-radius: 0;
+                }
+            }
+        }
+    }
+}

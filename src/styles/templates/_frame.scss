@@ -1,0 +1,28 @@
+.frame {
+    border: 2px solid map-get($colors, leading);
+    padding: 40px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    &-bar {
+        padding: 10px 25px;
+        background-color: map-get($colors, leading);
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        &__btn {
+            font-size: 1.03rem;
+            padding: 5px;
+            height: 25px;
+            width: 25px;
+            color: map-get($colors, light);
+            border-radius: 50%;
+            opacity: 0.7;
+            cursor: pointer;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}

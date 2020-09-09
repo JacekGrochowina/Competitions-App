@@ -1,0 +1,42 @@
+.footer-svg {
+    margin-bottom: -7px;
+}
+
+.footer {
+    background-color: map-get($colors, leading);
+    padding: 20px;
+    &__link {
+        font-weight: 500;
+        letter-spacing: 0;
+        color: map-get($colors, light);
+    }
+    &__info {
+        font-size: 14px;
+        font-weight: 300;
+        color: map-get($colors, light);
+        letter-spacing: 1px;
+        &:nth-of-type(2) {
+            text-align: right;
+            @include media-breakpoint-down(xs) {
+                margin-top: 15px;
+                text-align: left;
+            }
+        }
+        &--author:hover .footer__icon {
+            svg {
+                animation: heartbeat 1s;
+                @keyframes heartbeat {
+                    0% { transform: scale(1); }
+                    20% { transform: scale(.75); }
+                    40% { transform: scale(1); }
+                    60% { transform: scale(.75); }
+                    80% { transform: scale(1); }
+                    100% { transform: scale(1); }
+                }
+            }
+        }
+    }
+    &__icon svg {
+        width: 13px;
+    }
+}
